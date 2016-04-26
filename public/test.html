@@ -1,0 +1,19 @@
+<h3>Websockets Test</h3>
+
+<script type="text/javascript">
+  var socket = new WebSocket('wss://localhost.ssl:4567/')
+  // var socket = new WebSocket('ws://localhost:4567/')
+
+  socket.onopen = function(event) {
+    console.log('OPEN!')
+    console.log(event)
+    socket.send('hello');
+  }
+  socket.onerror = function(event) {
+    console.log('ERROR!')
+    console.log(event)
+  }
+  socket.onmessage = function(event) {
+    console.log(event.data)
+  }
+</script>
